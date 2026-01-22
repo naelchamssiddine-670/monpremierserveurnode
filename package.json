@@ -1,0 +1,28 @@
+{
+  "name": "monpremiernode",
+  "version": "1.0.0",
+  "description": "Je créer mon premier serveur Node. Le but est d'apprendre à gérer les requêtes http.",
+  "keywords": [
+    "serveur",
+    "node",
+    "javascript"
+  ],
+  "homepage": "https://github.com/naelchamssiddine-670/monpremierserveurnode#readme",
+  "bugs": {
+    "url": "https://github.com/naelchamssiddine-670/monpremierserveurnode/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naelchamssiddine-670/monpremierserveurnode.git"
+  },
+  "license": "ISC",
+  "author": "Nael Chamssiddine",
+  "type": "commonjs",
+  "main": "serveur.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
