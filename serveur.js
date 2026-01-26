@@ -8,9 +8,10 @@ const http = require('http');
 // J'importe l'application Express depuis app.js
 const app = require('./app');
 
+// Je declare le port ou l'application va ecouter les requetes
+const numeroPort = process.env.PORT || 3003;
 
 app.set('port', process.env.PORT || 3000);
-
 
 // Maintenant, je crée mon serveur en utilisant la méthode serveur du module HTTP.
 
