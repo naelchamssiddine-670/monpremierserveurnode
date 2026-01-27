@@ -9,9 +9,9 @@ const http = require('http');
 const app = require('./app');
 
 // Je declare le port ou l'application va ecouter les requetes
-const numeroPort = process.env.PORT || 3003;
+const numeroPort = process.env.PORT || 3000;
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', numeroPort);
 
 // Maintenant, je crée mon serveur en utilisant la méthode serveur du module HTTP.
 
@@ -30,7 +30,7 @@ const date = new Date();
 
 
 // Je précise l'adresse et le port du serveur.
-server.listen(3000, 'localhost', () => {
-    console.log('Le serveur est en cours d\'exécution sur http://localhost:3000');
+server.listen(numeroPort,'localhost', () => {
+    console.log('Le serveur est en cours d\'exécution sur http://localhost:', numeroPort);
     console.log('Date et heure : ' + date.toLocaleString());
 });
