@@ -25,20 +25,17 @@ app.use((req, res, next) => {
     next();
 });
 
-// Je dessines mes Routes avec Epress
-app.get("/api/fruit", (req, res) => {
-    console.log("Je passe dans la route /api/fruit");
+// J'ajoute un middlware qui gère la sécurité d'accées
+app.use((req, res) => {
+    // Je permet l'accés à mon API depuis n'importe quel origine
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    // J'autorise certaines en-têtes dans les requêtes recues dans notre API.
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
 
-    const fruit = [
-        {
-            id: 1,
-            nom: "Pomme",
-            description: "fruit saisonnier riche en vitamine C",
-            prix: 3,
-        }
-    ];
-
-    res.json(fruit);
+    // J'autorise certaines méthodes dans les requêtes avec les méthodes: GET, POST, PUT, DELETE, PATCH, OPTIONS
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+    next();
 });
+
 // J'exporte l'application express sous forme de module. ainsi, l'application peut être importée dans d'autres.
 module.exports = app;
